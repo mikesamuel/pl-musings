@@ -1,0 +1,270 @@
+body {
+    font-family: "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", "Verdana", sans-serif;
+    background: #fafafa;
+    color: #222;
+    line-height: 1.5em;
+    padding: .25em .5em;
+    margin: 0;
+}
+code, pre, tt, .term {
+    font-family: "Inconsolata", "Consolas", "Lucida Console", "Monaco", monospace
+}
+h1 {
+    font-family: "Roboto Slab", "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", "Verdana", sans-serif;
+}
+
+table {
+    border: 1px solid #222;
+    empty-cells: show;
+    border-spacing: 0;
+}
+table, .together, blockquote {
+    page-break-inside: avoid
+}
+td, th {
+    padding: 2px 1ex
+}
+thead > tr > * {
+    border-bottom: 1px solid #222
+}
+tbody > tr:nth-child(even) {
+    background-color: #ccc
+}
+thead {
+    background-color: #fff
+}
+tr > td {
+    border-left: 1px dotted #222
+  }
+tr > th {
+    border-left: 1px solid #222
+}
+blockquote > *:first-child:before {
+    font-size: 300%;
+    font-family: Georgia, serif;
+    content: '\201c';
+    line-height: 1em;
+}
+.indent {
+    margin-left: 2em
+}
+blockquote.unironic:hover:before {
+    position: absolute;
+    content: "Le sigh";
+    border: 1px dotted;
+    padding: 2px;
+    font-size: 75%;
+    background: #fff;
+}
+
+a.headerLink {
+    visibility: hidden;
+    padding-left: 1em;
+    font-size: 75%;
+    text-decoration: none
+}
+*:hover > a.headerLink { visibility: visible }
+
+a[href] { color: #00b }
+@media screen, projection {
+    a:visited { color: #808 }
+}
+
+a.fn { font-size: 50%; vertical-align: super }
+p.fn { font-size: 75% }
+
+
+table.grammar, table.grammar td, table.grammar th,
+table.justformatting, table.justformatting td, table.justformatting th
+{ border: none; vertical-align: top }
+
+table.grammar tr,
+table.justformatting tr
+{ background-color: transparent }
+
+table.grammar tr > td:nth-child(2) { text-align: right }
+
+.nonterm:before { content: "<" }
+.nonterm:after { content: ">" }
+.nonterm { font-style: italic }
+.term:before { content: "\201c" }
+.term:after { content: "\201d" }
+
+.grammar sup { font-size: 67%; line-height: 67% }
+.grammar sub { font-size: 50% }
+
+/* Faded logo in background */
+body::before {
+    background-image: url('../images/trademarks/temper-logo/temperlogo_badge.png');
+
+    background-size: contain;
+    backgroud-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.05;
+}
+
+/* Algorithms in pseudo-English should have nested steps that are distinguishable. */
+ol.algo { list-style-type: decimal }
+ol.algo > li > ol { list-style-type: lower-latin }
+ol.algo > li > ol > li > ol { list-style-type: lower-roman }
+ol.algo > li > ol > li > ol > li > ol { list-style-type: decimal }
+ol.algo > li > ol > li > ol > li > ol > li > ol { list-style-type: lower-latin }
+ol.algo > li > ol > li > ol > li > ol > li > ol > li > ol { list-style-type: lower-roman }
+
+#preamble {
+    margin: 0;
+    vertical-align: center;
+    font-style: italic;
+    background-size: contain;
+    backgroud-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/* Support for ../js/navbar.js */
+#navbar, #navbar > .site-map {
+    background: #ddd;
+}
+#navbar {
+    text-align: center;
+    margin: -.25em -.5em 2px -.5em;
+    padding: 0 0 2px 0;
+    display: grid;
+    grid-template-columns: 34px 10em 1fr 10em;
+    grid-template-rows: 32px;
+    border-bottom: 2px solid #888;
+    position: relative;
+}
+#navbar > #preamble, #navbar > a {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#navbar > a {
+    vertical-align: middle;
+    text-decoration: none;
+    margin: 0 .5em;
+}
+#navbar > a.prev-link {
+    text-align: left;
+}
+#navbar > a[href].prev-link:before {
+    content: "\25c0  ";
+    color: #044;
+}
+#navbar > #preamble { display: inline-block }
+#navbar > a.next-link {
+    text-align: right;
+}
+#navbar > a[href].next-link:after {
+    content: " \25b6";
+    color: #044;
+}
+#navbar > .site-toggle {
+    user-select: none;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 0em;
+    margin-top: 1px;
+}
+#navbar:hover > .site-map.show {
+    display: block;
+    position: absolute;
+    border-style: solid;
+    border-color: #888;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    margin: 0;
+    top: 36px;
+}
+#navbar > .site-map {
+    display: none;
+}
+#navbar > .site-map .current { background: #eee }
+#navbar > .site-map > div {
+    padding: .25em .5em;
+    color: #444;
+}
+
+dl > dt { font-style: italic }
+
+
+/* Courtesy mrmrs.cc/links/ */
+pre.prettyprint a .com {
+    /* Underlines are distracting normally, but in
+       formatted code blocks, it's important to set
+       links apart.
+     */
+    text-decoration: underline;
+}
+a,         pre.prettyprint a .com {
+    transition: color .4s;
+}
+a {
+    text-decoration: none;
+}
+a:link,    pre.prettyprint a:link    .com { color: #265C83; }
+a:visited, pre.prettyprint a:visited .com { color: #5C265C; }
+a:hover,   pre.prettyprint a:hover   .com { color: #7FDBFF; }
+a:active,  pre.prettyprint a:active  .com {
+    transition: color .3s;
+    color: #007BE6;
+}
+a:visited:hover, pre.prettyprint a:visited:hover .com {
+    transition: color .3s;
+    color: #e600e6;
+}
+
+/* Support for ../js/inline-tests.js */
+.expected:before { content: "Wanted: " }
+.input { display: inline-block; white-space: pre }
+.input:before { content: "Input: \201c" }
+.input:after { content: "\201d" }
+.testcase.fail {
+    border: 1px solid red;
+}
+.testcase {
+    margin: .5em;
+    border: 1px dotted black;
+    padding: .25em;
+}
+#teststatus.failures { color: red }
+body.has-failures {
+    border: 3px dashed red;
+}
+
+/* Support for ../js/visible-scripts.js */
+script.visible {
+    display: block; white-space: pre; border: 1px solid black
+}
+pre.hoisted {
+    position: relative;
+}
+pre.hoisted:before {
+    content: "Hoisted code";
+    display: block;
+    position: absolute;
+    left: -.8em;
+    top: -1.6em;
+    font-size: 8px;
+    border: 1px solid #444;
+    padding: 2px;
+    line-height: 1.2em;
+    background: #ddf;
+    color: #444;
+    font-weight: bolder;
+}

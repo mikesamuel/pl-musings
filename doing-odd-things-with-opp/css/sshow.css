@@ -1,0 +1,26 @@
+/* sshow.js adds the active-slideshow class to anything
+   that has the slideshow class. */
+ol.active-slideshow {
+    display: block;
+    border: 1px solid black;
+    padding: .5em;
+    position: relative;
+}
+ol.active-slideshow > li {
+    display: block;
+    /* Once a slideshow has had controls added, make slides overlap.
+       Also, position below. */
+    position: absolute;
+    /* Hide unselected items */
+    visibility: hidden;
+}
+ol.active-slideshow > li.selected {
+    visibility: visible
+}
+/* The "next" button should float to the right of the "previous button" */
+ol.slideshow > button.fwd {
+    float: right
+}
+.slideshow > li > h4 {
+    margin: 0; padding: 0; white-space: nowrap
+}

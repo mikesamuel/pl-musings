@@ -1,0 +1,47 @@
+.token, script.visible, .tleaf, .input {
+    font-family: "Inconsolata", "Consolas", "Lucida Console", "Monaco", monospace
+}
+.input:before, .input:after, .token:after, .token:before, summary > .tree:before,
+.tleaf:before, .tleaf:after, pre.hoisted:before {
+    font-family: "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", "Verdana", sans-serif;
+}
+
+.token { border: 1px solid dotted; background: #eee; white-space: nowrap }
+.token.synthetic { font-style: italic }
+.tokens:before { content: "Tokens: " }
+#tio-table .tokens:before { content: "" }
+dl > dt:after, .token:after { content: "\201d" }
+dl > dt:before, .token:before { content: "\201c" }
+summary > .tree:before { content: "Tree: " }
+.tree { white-space: pre-wrap }
+
+.problem-tokens { border-bottom: 3px dotted red; display: inline-block; background: #fcc }
+
+.padded { min-width: 1em; display: inline-block; text-align: center }
+
+.tnode { display:inline-block; border: 1px solid green; margin: 2px }
+.tleaf:before { content: "\201c" }
+.tleaf:after { content: "\201d" }
+
+.ast {
+    display: inline-block; border: 1px solid green; margin: .5em 4px 4px 4px;
+    position: relative;
+    line-height: normal;
+}
+.ast > span.type {
+    position: absolute; top: -.5em ;
+    line-height: normal; padding: 0 2px 0 2px;
+    font-size: 8px;
+}
+span.type {
+    color: green; background: white;
+}
+.ast.garbage {
+    border: 1px dashed red;
+    max-width: 12em;
+}
+.ast.garbage > span.type { color: red; font-style: italic }
+.quasi > span.type, span.type.quasi {
+    /* Color quasi quotations as ice-like */
+    background: #a5f2f3;
+}
